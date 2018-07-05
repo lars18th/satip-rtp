@@ -12,7 +12,7 @@
 #
 # Configuration Example:
 #
-# # Channel 1 on multicast port 5554, using first tuner (fe=1)
+# # Channel 1 on multicast port 5554, using first orbital position
 # 5554:src=1&freq=12525&sr=27500&\
 #      msys=dvbs&mtype=qpsk&pol=v&fec=34&\
 #      pids=0,1,16,17,18,52,57,100,104,165,299,1029,3002,3003
