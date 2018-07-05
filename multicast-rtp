@@ -13,9 +13,9 @@
 # Configuration Example:
 #
 # # Channel 1 on multicast port 5554, using first orbital position
-# 5554:src=1&freq=12525&sr=27500&\
-#      msys=dvbs&mtype=qpsk&pol=v&fec=34&\
-#      pids=0,1,16,17,18,52,57,100,104,165,299,1029,3002,3003
+# 5554:src=1&freq=11347&pol=v&ro=0.35&msys=dvbs2&\
+#      mtype=8psk&plts=on&sr=22000&fec=23&\
+#      pids=0,17,18,6600,6610,6620,6630
 #
 # The SAT>IP parameters should match the SAT>IP specification:
 #   http://www.satip.info/resources
@@ -24,11 +24,11 @@
 # option -r <ipv4_mcast> or --remote-rtp <ipv4_mcast>. By default,
 # this address is 239.255.255.250.
 #
-# Command line example:
+# Command-line example:
 #
 # ./multicast-rtp \
 #   -s 192.168.1.100:554 -d 239.0.0.1 -p 5554 \
-#   -u "src=1&freq=12525&sr=27500&msys=dvbs&mtype=qpsk&pol=v&fec=34&pids=0,1,16,17,18,52,57,100,104,165,299,1029,3002,3003"
+#   -u "src=1&freq=11347&pol=v&ro=0.35&msys=dvbs2&mtype=8psk&plts=on&sr=22000&fec=23&pids=0,17,18,6600,6610,6620,6630"
 #
 # Note: The SAT>IP server needs to support "target" spoofing
 # and multicast address as "unicast" (minisatip project does it)
