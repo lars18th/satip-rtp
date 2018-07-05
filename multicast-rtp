@@ -2,6 +2,7 @@
 #
 # Tiny SAT>IP client which activates multicast streaming.
 #
+# Use command line parameters of
 # Create /etc/sysconfig/multicast file with syntax:
 #
 # <mport>:<satip-params>
@@ -9,10 +10,10 @@
 # You can modify this file when the program is active and
 # reload the configuration using the SIGHUP signal.
 #
-# Example:
+# Configuration Example:
 #
 # # Channel 1 on multicast port 5554, using first tuner (fe=1)
-# 5554:fe=1&src=1&freq=12525&sr=27500&\
+# 5554:src=1&freq=12525&sr=27500&\
 #      msys=dvbs&mtype=qpsk&pol=v&fec=34&\
 #      pids=0,1,16,17,18,52,57,100,104,165,299,1029,3002,3003
 #
@@ -22,6 +23,15 @@
 # Note: The multicast address must be specified through minisatip
 # option -r <ipv4_mcast> or --remote-rtp <ipv4_mcast>. By default,
 # this address is 239.255.255.250.
+#
+# Command line example:
+#
+# ./multicast-rtp \
+#   -s 192.168.1.100:554 -d 239.0.0.1 -p 5554 \
+#   -u "src=1&freq=12525&sr=27500&msys=dvbs&mtype=qpsk&pol=v&fec=34&pids=0,1,16,17,18,52,57,100,104,165,299,1029,3002,3003"
+#
+# Note: The SAT>IP server needs to support "target" spoofing
+# and multicast address as "unicast" (minisatip project does it)
 #
 
 import os
