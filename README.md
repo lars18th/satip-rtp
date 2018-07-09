@@ -19,4 +19,4 @@ https://github.com/perexg/satip-axe/blob/master/tools/multicast-rtp
 ### Notes:
 - If your server doesn't support spoofing of the "target" address then you can only unicast to the same device where you run this tool.
 - When the server doesn't support a multicast address as "unicast", then you can't use it for setting the target multicast address. The port is selectable anyway, but the stream is streamed to the multicast address assigned in the SAT>IP server.
-- You can use this tool to manage from scripts any SAT>IP server that accepts multicast inputs (or unicast when running in the same server). The streaming will be open until you stop the tool.
+- You can use this tool to manage from scripts any SAT>IP server if the client (receiver) accepts multicast TS inputs (or unicast when running in the same server). The streaming will be open until you stop the tool.
