@@ -13,9 +13,10 @@ https://github.com/perexg/satip-axe/blob/master/tools/multicast-rtp
 6. Quiet mode for running as daemon.
 
 ### Examples:
-1. Scenario A: You like to use one SAT>IP Server at address 192.168.1.100 to streaming the KIKA-HD program from 19.2E to the multicast address 239.0.0.1:10000.<br/>Then use this command:<br/>```
+1. Scenario A: You want to use one SAT>IP Server at address 192.168.1.100 to streaming the KIKA-HD program from 19.2E to the multicast address 239.0.0.1:10000.<br/>Then use this command:<br/>```
 multicast-rtp -s 192.168.1.100:554 -d 239.0.0.1 -p 10000 -u "src=1&freq=11347&pol=v&ro=0.35&msys=dvbs2&mtype=8psk&plts=on&sr=22000&fec=23&pids=0,17,18,6600,6610,6620,6630"```
-2. Scenario B: You like to use it as the original *satip-axe* tool.<br/> In this case use:<br/> `multicast-rtp -s 127.0.0.1:554 -c /etc/sysconfig/multicast`
+2. Scenario B: You want to use it as the original *satip-axe* tool.<br/> In this case use:<br/> `multicast-rtp -c /home/myconfig/multicast`, or directly <br/>
+`multicast-rtp` (default config is `/etc/sysconfig/multicast` with default server `127.0.0.1:554`)
   
 ### Notes:
 - If your server doesn't support spoofing of the "target" address then you can only unicast to the same device where you run this tool.
