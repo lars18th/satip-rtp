@@ -64,7 +64,7 @@ parser.add_argument('-l', '--syslog', dest='syslog',
   action='store_true',
   help='enable System LOG')
 parser.add_argument('-s', '--server', dest='server',
-  required=True,
+  default='127.0.0.1:554',
   help='server to connect')
 parser.add_argument('-d', '--destination', dest='addr',
   default='',
@@ -72,7 +72,10 @@ parser.add_argument('-d', '--destination', dest='addr',
 parser.add_argument('-p', '--port', dest='port', type=int,
   default=10000,
   help='target port  (default: 10000)')
-group = parser.add_mutually_exclusive_group(required=True)
+if len(sys.argv) > 1:
+  group = parser.add_mutually_exclusive_group(required=True)
+else:
+  group = parser.add_argument_group()
 group.add_argument('-u', '--uri', dest='uri',
   default='',
   help='URI to request')
