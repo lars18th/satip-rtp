@@ -89,6 +89,8 @@ SYSLOG = args.syslog
 
 if args.port > 0 and args.port < 65536 :
   TARGET_PORT = args.port
+  if SERVER.find(":") < 0 :
+    SERVER = SERVER + ":554"
 else :
   parser.print_help()
   sys.exit()
